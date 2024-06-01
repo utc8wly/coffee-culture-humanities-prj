@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Culture - Home</title>
+    <title>Coffee Culture - Maps of Origin</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-
+    <script src="./amcharts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 </head>
 
 <body>
@@ -41,58 +44,45 @@
 
     <!-- 页面内容 -->
     <div class="container">
-        <div class="coffe-types">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="image-wrapper">
-                        <img src="./img/Americano.jpg" alt="Image 1" class="img-fluid">
-                        <div class="overlay">Americano</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-wrapper">
-                        <img src="./img/Cappuccino.jpg" alt="Image 1" class="img-fluid">
-                        <div class="overlay">Cappuccino</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-wrapper">
-                        <img src="./img/Dirty.jpg" alt="Image 1" class="img-fluid">
-                        <div class="overlay">Dirty</div>
-                    </div>
-                </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 map-title">
+                Maps of Coffee Origin
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="image-wrapper">
-                        <img src="./img/Espresso.jpg" alt="Image 1" class="img-fluid">
-                        <div class="overlay">Espresso</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-wrapper">
-                        <img src="./img/Latte.jpg" alt="Image 1" class="img-fluid">
-                        <div class="overlay">Latte</div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="image-wrapper">
-                        <img src="./img/Macchiato.jpg" alt="Image 1" class="img-fluid">
-                        <div class="overlay">Macchiato</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="time-line">
-            <img style="width: 100%;" src="./img/coffee-maker-timeline.jpg" alt="">
         </div>
     </div>
-<div class="foot">
-    
-</div>
+
+    <div class="map-container">
+        <div id="chartdiv"></div>
+    </div>
+
+
+    <div class="foot">
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Country Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalContent">Details here...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./map.js"></script>
 </body>
 
 </html>
